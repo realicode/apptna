@@ -8,10 +8,13 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.CompoundButton;
+import android.widget.Toast;
 
+import com.blankj.utilcode.utils.AppUtils;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -36,7 +39,11 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 import com.mikepenz.octicons_typeface_library.Octicons;
 import com.realaicy.mb.android.apptna.entity.TabEntity;
+import com.realaicy.mb.android.apptna.ui.Fragment.MessageFragment;
+import com.realaicy.mb.android.apptna.ui.Fragment.MoreFragment;
 import com.realaicy.mb.android.apptna.ui.Fragment.SimpleCardFragment;
+import com.realaicy.mb.android.apptna.ui.Fragment.TODOFragment;
+import com.realaicy.mb.android.apptna.update.UpdateChecker;
 import com.realaicy.mb.android.apptna.utils.ViewFindUtils;
 
 import java.text.SimpleDateFormat;
@@ -78,15 +85,20 @@ public class MainActivity extends AppCompatActivity{
         realCreateToolbar();
         realCreateDrawer(savedInstanceState);
         toolbar.setNavigationIcon(R.mipmap.ic_drawer_home);
+        processTab();
 
-        String ver = "1";
+        Log.e("99", String.valueOf(AppUtils.getAppVersionCode(App.getAppContext())));
+        Log.e("99", AppUtils.getAppVersionName(App.getAppContext()));
 
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date d1 = new Date();
-        String t1 = format.format(d1);
 
-//        TextView tvVer=(TextView)findViewById(R.id.realver); //R.id.tv是xml布局里textview对应的id
-//        tvVer.setText("版本: " + ver +"\t 现在时间: " +t1 );
+//        String ver = "1";
+//
+//        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        Date d1 = new Date();
+//        String t1 = format.format(d1);
+//
+////        TextView tvVer=(TextView)findViewById(R.id.realver); //R.id.tv是xml布局里textview对应的id
+////        tvVer.setText("版本: " + ver +"\t 现在时间: " +t1 );
     }
 
 
@@ -211,28 +223,48 @@ public class MainActivity extends AppCompatActivity{
         toolbar.inflateMenu(R.menu.zhihu_toolbar_menu);
         //toolbar.setNavigationIcon(R.mipmap.ic_drawer_home);
         toolbar.setTitle(R.string.home_page);
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                int menuItemId = item.getItemId();
+                if (menuItemId == R.id.action_search) {
+                    Toast.makeText(MainActivity.this, R.string.menu_search, Toast.LENGTH_SHORT).show();
+
+                } else if (menuItemId == R.id.action_notification) {
+                    Toast.makeText(MainActivity.this, R.string.menu_notifications, Toast.LENGTH_SHORT).show();
+
+                } else if (menuItemId == R.id.action_update) {
+//                    Toast.makeText(MainActivity.this, R.string.menu_update, Toast.LENGTH_SHORT).show();
+                    UpdateChecker.checkForDialog(MainActivity.this);
+//                    UpdateChecker.checkForNotification(MainActivity.this);
+
+                } else if (menuItemId == R.id.action_about) {
+                    Toast.makeText(MainActivity.this, String.valueOf(AppUtils.getAppVersionCode(App.getAppContext())), Toast.LENGTH_SHORT).show();
+
+                }
+                return true;
+            }
+        });
+
 
 //        //设置导航图标要在setSupportActionBar方法之后
        // setSupportActionBar(toolbar);
 
+    }
+    private  void  processTab(){
 
-        for (String title : mTitles) {
-            mFragments.add(SimpleCardFragment.getInstance("Switch ViewPager " + title));
-            mFragments2.add(SimpleCardFragment.getInstance("Switch Fragment " + title));
-        }
+        mFragments2.add(SimpleCardFragment.getInstance());
+        mFragments2.add(new MessageFragment());
+        mFragments2.add(new TODOFragment());
+        mFragments2.add(MoreFragment.getInstance());
 
         for (int i = 0; i < mTitles.length; i++) {
             mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIds[i], mIconUnselectIds[i]));
         }
 
         mDecorView = getWindow().getDecorView();
-        /** with nothing */
-        /** with ViewPager */
-        /** with Fragments */
         mTabLayout_3 = ViewFindUtils.find(mDecorView, R.id.tl_3);
-
         mTabLayout_3.setTabData(mTabEntities, this, R.id.fl_change, mFragments2);
-
         mTabLayout_3.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelect(int position) {
@@ -245,36 +277,8 @@ public class MainActivity extends AppCompatActivity{
             }
         });
         mTabLayout_3.setCurrentTab(0);
-
         //显示未读红点
         mTabLayout_3.showDot(1);
     }
 
-
-
-    private class MyPagerAdapter extends FragmentPagerAdapter {
-        public MyPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public int getCount() {
-            return mFragments.size();
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return mTitles[position];
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return mFragments.get(position);
-        }
-    }
-
-    protected int dp2px(float dp) {
-        final float scale = mContext.getResources().getDisplayMetrics().density;
-        return (int) (dp * scale + 0.5f);
-    }
 }

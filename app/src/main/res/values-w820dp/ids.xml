@@ -4,6 +4,7 @@
     <item name="action_notification" type="id" />
     <item name="action_settings" type="id" />
     <item name="action_about" type="id" />
+    <item name="action_update" type="id" />
     <item name="normal" type="id" />
     <item name="clear" type="id" />
     <item name="linear" type="id" />

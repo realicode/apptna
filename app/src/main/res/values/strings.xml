@@ -9,6 +9,8 @@
     <string name="menu_notifications">通知</string>
     <string name="menu_settings">设置</string>
     <string name="menu_about_us">关于</string>
+    <string name="menu_update">软件更新</string>
+
     <string name="home_page">首页</string>
     <string name="zhi_hu">知乎</string>
     <string name="item_01">Item 1</string>
@@ -79,4 +81,19 @@
     <string name="element_text">Element</string>
     <string name="grid_layout_manager">Grid Layout Manager</string>
     <string name="linear_layout_manager">Linear Layout Manager</string>
+
+
+    <string name="android_auto_update_dialog_title">发现新版本</string>
+
+    <string name="android_auto_update_notify_ticker">发现新版本,点击进行升级</string>
+    <string name="android_auto_update_notify_content">发现新版本,点击进行升级</string>
+
+    <string name="android_auto_update_dialog_btn_download">立即下载</string>
+    <string name="android_auto_update_dialog_btn_cancel">以后再说</string>
+
+    <string name="android_auto_update_toast_no_new_update">已经是最新版本</string>
+
+    <string name="android_auto_update_download_progress">正在下载:%1$d%%</string>
+
+    <string name="android_auto_update_dialog_checking">正在检查版本</string>
 </resources>

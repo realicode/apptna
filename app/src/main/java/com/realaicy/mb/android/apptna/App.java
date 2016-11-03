@@ -1,6 +1,7 @@
 package com.realaicy.mb.android.apptna;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.realaicy.mb.android.apptna.engine.Engine;
 
@@ -15,6 +16,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class App extends Application {
     private static App sInstance;
     private Engine mEngine;
+    private static Context context;
+
 
     @Override
     public void onCreate() {
@@ -25,6 +28,7 @@ public class App extends Application {
                 .baseUrl("http://7xk9dj.com1.z0.glb.clouddn.com/banner/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build().create(Engine.class);
+        App.context = getApplicationContext();
     }
 
 
@@ -34,5 +38,9 @@ public class App extends Application {
 
     public Engine getEngine() {
         return mEngine;
+    }
+
+    public static Context getAppContext() {
+        return App.context;
     }
 }

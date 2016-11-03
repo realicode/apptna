@@ -43,6 +43,14 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
     </style>
+    <style name="MatchWrap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="MatchWrap.Vertical">
+        <item name="android:orientation">vertical</item>
+    </style>
+
     <style name="WrapWrap">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -106,7 +114,7 @@
         <!-- 开启自动轮播 -->
         <item name="banner_pointAutoPlayAble">true</item>
         <!-- 自动轮播的时间间隔 -->
-        <item name="banner_pointAutoPlayInterval">3000</item>
+        <item name="banner_pointAutoPlayInterval">5000</item>
         <!-- 指示点容器背景 -->
         <item name="banner_pointContainerBackground">#44aaaaaa</item>
         <!-- 指示点背景 -->
