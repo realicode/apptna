@@ -1,10 +1,7 @@
 package com.realaicy.mb.android.apptna;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -39,16 +36,14 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 import com.mikepenz.octicons_typeface_library.Octicons;
 import com.realaicy.mb.android.apptna.entity.TabEntity;
-import com.realaicy.mb.android.apptna.ui.Fragment.MessageFragment;
-import com.realaicy.mb.android.apptna.ui.Fragment.MoreFragment;
-import com.realaicy.mb.android.apptna.ui.Fragment.SimpleCardFragment;
-import com.realaicy.mb.android.apptna.ui.Fragment.TODOFragment;
+import com.realaicy.mb.android.apptna.ui.fragment.home.HomeFragment;
+import com.realaicy.mb.android.apptna.ui.fragment.msg.MessageFragment;
+import com.realaicy.mb.android.apptna.ui.fragment.MoreFragment;
+import com.realaicy.mb.android.apptna.ui.fragment.todo.TodoFragment;
 import com.realaicy.mb.android.apptna.update.UpdateChecker;
 import com.realaicy.mb.android.apptna.utils.ViewFindUtils;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -59,9 +54,7 @@ public class MainActivity extends AppCompatActivity{
     private Drawer result = null;
     private static final int PROFILE_SETTING = 100000;
 
-    private Context mContext = this;
     private ArrayList<Fragment> mFragments = new ArrayList<>();
-    private ArrayList<Fragment> mFragments2 = new ArrayList<>();
 
     private String[] mTitles = {"首页", "消息", "待办", "更多"};
     private int[] mIconUnselectIds = {
@@ -71,8 +64,6 @@ public class MainActivity extends AppCompatActivity{
             R.mipmap.tab_home_select, R.mipmap.tab_speech_select,
             R.mipmap.tab_contact_select, R.mipmap.tab_more_select};
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
-    private View mDecorView;
-    private CommonTabLayout mTabLayout_3;
 
 
     @Override
@@ -131,9 +122,7 @@ public class MainActivity extends AppCompatActivity{
             super.onBackPressed();
         }
     }
-
-
-
+    
 
     private void realCreateDrawer(Bundle savedInstanceState) {
         // Create a few sample profile
@@ -253,18 +242,18 @@ public class MainActivity extends AppCompatActivity{
     }
     private  void  processTab(){
 
-        mFragments2.add(SimpleCardFragment.getInstance());
-        mFragments2.add(new MessageFragment());
-        mFragments2.add(new TODOFragment());
-        mFragments2.add(MoreFragment.getInstance());
+        mFragments.add(HomeFragment.getInstance());
+        mFragments.add(new MessageFragment());
+        mFragments.add(new TodoFragment());
+        mFragments.add(MoreFragment.getInstance());
 
         for (int i = 0; i < mTitles.length; i++) {
             mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIds[i], mIconUnselectIds[i]));
         }
 
-        mDecorView = getWindow().getDecorView();
-        mTabLayout_3 = ViewFindUtils.find(mDecorView, R.id.tl_3);
-        mTabLayout_3.setTabData(mTabEntities, this, R.id.fl_change, mFragments2);
+        View mDecorView = getWindow().getDecorView();
+        CommonTabLayout mTabLayout_3 = ViewFindUtils.find(mDecorView, R.id.tl_main);
+        mTabLayout_3.setTabData(mTabEntities, this, R.id.fl_main, mFragments);
         mTabLayout_3.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelect(int position) {

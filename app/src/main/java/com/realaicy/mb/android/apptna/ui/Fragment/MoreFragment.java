@@ -1,6 +1,5 @@
-package com.realaicy.mb.android.apptna.ui.Fragment;
+package com.realaicy.mb.android.apptna.ui.fragment;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -15,8 +14,7 @@ import com.realaicy.mb.android.apptna.R;
 public class MoreFragment extends Fragment{
 
     public static MoreFragment getInstance() {
-        MoreFragment sf = new MoreFragment();
-        return sf;
+        return new MoreFragment();
     }
 
     @Override

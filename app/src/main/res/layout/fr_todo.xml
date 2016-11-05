@@ -1,28 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:gravity="center"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="55dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp"
+            android:background="@color/color_e81d62"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
-    <cn.bingoogolapple.bgabanner.BGABanner
-        android:id="@+id/banner_todo_default"
-        style="@style/BannerDefaultStyle"
-        app:banner_indicatorGravity="bottom|right"
-        app:banner_isNeedShowIndicatorOnOnlyOnePage="true"
-        app:banner_isNumberIndicator="true"
-        app:banner_numberIndicatorBackground="@drawable/shape_number_indicator_background"
-        app:banner_numberIndicatorTextColor="@android:color/white"
-        app:banner_numberIndicatorTextSize="10sp"
-        app:banner_pointContainerBackground="@android:color/transparent"
-        app:banner_transitionEffect="defaultEffect" />
+    </LinearLayout>
 
-    <TextView
-        android:text="TODO Fragment"
-        android:textSize="24sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="vertical">
+        <com.flyco.tablayout.SlidingTabLayout
+            android:id="@+id/tl_s_3"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#3F9FE0"
+            tl:tl_indicator_gravity="TOP"
+            tl:tl_textAllCaps="true"
+            tl:tl_textBold="BOTH"
+            tl:tl_textsize="14sp"/>
+
+    </LinearLayout>
 
 </LinearLayout>

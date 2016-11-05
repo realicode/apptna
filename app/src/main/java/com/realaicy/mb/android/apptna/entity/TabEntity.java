@@ -3,9 +3,25 @@ package com.realaicy.mb.android.apptna.entity;
 import com.flyco.tablayout.listener.CustomTabEntity;
 
 public class TabEntity implements CustomTabEntity {
+    public int getSelectedIcon() {
+        return selectedIcon;
+    }
+
+    public void setSelectedIcon(int selectedIcon) {
+        this.selectedIcon = selectedIcon;
+    }
+
+    public int getUnSelectedIcon() {
+        return unSelectedIcon;
+    }
+
+    public void setUnSelectedIcon(int unSelectedIcon) {
+        this.unSelectedIcon = unSelectedIcon;
+    }
+
     public String title;
-    public int selectedIcon;
-    public int unSelectedIcon;
+    private int selectedIcon;
+    private int unSelectedIcon;
 
     public TabEntity(String title, int selectedIcon, int unSelectedIcon) {
         this.title = title;

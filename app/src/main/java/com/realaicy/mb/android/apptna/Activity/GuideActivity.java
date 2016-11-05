@@ -24,7 +24,7 @@ import cn.bingoogolapple.bgabanner.BGABannerUtil;
 
 
 public class GuideActivity extends Activity implements View.OnClickListener {
-    private static final String TAG = GuideActivity.class.getSimpleName();
+    //private static final String TAG = GuideActivity.class.getSimpleName();
     private TextView mSkipTv;
     private Button mEnterBtn;
     private BGABanner mBackgroundBanner;

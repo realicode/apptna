@@ -32,7 +32,7 @@ public class LoaderActivity extends Activity {
     private static class MyHandler extends Handler {
         private final WeakReference<LoaderActivity> mActivity;
 
-        public MyHandler(LoaderActivity activity) {
+        MyHandler(LoaderActivity activity) {
             mActivity = new WeakReference<>(activity);
         }
 

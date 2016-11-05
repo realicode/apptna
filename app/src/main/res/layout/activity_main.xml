@@ -33,13 +33,13 @@
 
             <FrameLayout
                 android:background="#eeeeee"
-                android:id="@+id/fl_change"
+                android:id="@+id/fl_main"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
             </FrameLayout>
 
             <com.flyco.tablayout.CommonTabLayout
-                android:id="@+id/tl_3"
+                android:id="@+id/tl_main"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:background="#ffffff"

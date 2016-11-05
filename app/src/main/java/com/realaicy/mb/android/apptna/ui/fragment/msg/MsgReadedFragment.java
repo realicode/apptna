@@ -1,4 +1,4 @@
-package com.realaicy.mb.android.apptna.ui.Fragment;
+package com.realaicy.mb.android.apptna.ui.fragment.msg;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,10 +10,7 @@ import android.view.ViewGroup;
 
 import com.realaicy.mb.android.apptna.R;
 
-/**
- * Created by donglinghao on 2016-01-28.
- */
-public class TODOFragment extends Fragment {
+public class MsgReadedFragment extends Fragment {
 
     private View mRootView;
 
@@ -21,8 +18,8 @@ public class TODOFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (mRootView == null){
-            Log.e("666","TODOFragment");
-            mRootView = inflater.inflate(R.layout.fr_todo,container,false);
+            Log.e("666","MsgReadedFragment");
+            mRootView = inflater.inflate(R.layout.fr_msg_read,container,false);
         }
         ViewGroup parent = (ViewGroup) mRootView.getParent();
         if (parent != null){

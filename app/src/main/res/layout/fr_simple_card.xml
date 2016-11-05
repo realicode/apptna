@@ -8,7 +8,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="58dp" />
+            android:layout_height="50dp" />
 
         <cn.bingoogolapple.bgabanner.BGABanner
             android:id="@+id/banner_main_alpha"
@@ -57,55 +57,105 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_weight="1"
-                android:gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="吃吃"/>
-            <TextView
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="喝喝"/>
-            <TextView
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="玩玩"/>
-            <TextView
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="乐乐"/>
-            </LinearLayout>
+                android:text="吃吃" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="喝喝" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="玩玩" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="乐乐" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="240dp"
+            android:layout_height="150dp"
             android:layout_marginTop="16dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
             android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/color_005eaa"
-                android:orientation="horizontal">
-
-            </LinearLayout>
+                android:layout_marginRight="6dp"
+                android:background="@drawable/item1" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/color_31c27c"
-                android:orientation="vertical"></LinearLayout>
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="6dp"
+                    android:background="@drawable/item3" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
+                    android:background="@drawable/item4" />
+                </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="6dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginRight="6dp"
+                android:background="@drawable/item2" />
+
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/item5" />
+
 
         </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:textSize="18dp"
+            android:gravity="center_vertical|left"
+            android:text="最新消息：当山峰没有棱角的时候 , 当河水不再流 ...让我们红尘作伴活得潇潇洒洒 , 对酒当歌共享人间繁华"/>
 
     </LinearLayout>
 </ScrollView>
