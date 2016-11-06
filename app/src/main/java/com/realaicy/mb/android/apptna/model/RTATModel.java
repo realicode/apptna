@@ -1,9 +1,11 @@
 package com.realaicy.mb.android.apptna.model;
 
+import android.os.Parcelable;
+
 import com.google.auto.value.AutoValue;
 
 @AutoValue
-public abstract class RTATModel {
+public abstract class RTATModel  implements Parcelable {
     public abstract int id();
     public abstract String title();
 

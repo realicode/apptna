@@ -45,9 +45,12 @@ import com.realaicy.mb.android.apptna.utils.ViewFindUtils;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity{
 
-    Toolbar toolbar;
+    @BindView(R.id.toolbar) Toolbar toolbar;
 
     //save our header or result
     private AccountHeader headerResult = null;
@@ -71,6 +74,7 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
 
         realCreateToolbar();
@@ -208,7 +212,7 @@ public class MainActivity extends AppCompatActivity{
     }
 
     private void realCreateToolbar(){
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.inflateMenu(R.menu.zhihu_toolbar_menu);
         //toolbar.setNavigationIcon(R.mipmap.ic_drawer_home);
         toolbar.setTitle(R.string.home_page);
