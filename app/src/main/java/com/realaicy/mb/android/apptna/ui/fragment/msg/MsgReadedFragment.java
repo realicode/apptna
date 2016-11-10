@@ -61,13 +61,11 @@ public class MsgReadedFragment extends Fragment implements RecyclerArrayAdapter.
 
 
         adapter = new RecyclerArrayAdapter(getContext()) {
-
             @Override
             public BaseViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
-                return null;
+                return new PersonViewHolder(parent);
             }
         };
-
 
         recyclerView.setAdapterWithProgress(adapter);
         adapter.setMore(R.layout.view_more, this);
@@ -104,10 +102,6 @@ public class MsgReadedFragment extends Fragment implements RecyclerArrayAdapter.
 
         recyclerView.setRefreshListener(this);
         onRefresh();
-
-
-
-
 
         return mRootView;
     }

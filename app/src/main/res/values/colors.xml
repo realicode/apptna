@@ -15,4 +15,19 @@
     <color name="color_2095f2">#2095f2</color>
     <color name="color_512da8">#512da8</color>
     <color name="color_cd3e3a">#cd3e3a</color>
+
+
+    <color name="red_normal">#FF0000</color>
+    <color name="red_pressed">#FF6666</color>
+    <color name="green_normal">#37C000</color>
+    <color name="green_pressed">#30A070</color>
+    <color name="purple_normal">#9932CC</color>
+    <color name="purple_pressed">#9F79EE</color>
+
+
+    <color name="translate">#00000000</color>
+    <color name="color_light_blue">#14acae</color>
+    <color name="txt_color">#1d1e1e</color>
+    <color name="mian_bg">#FFFFFF</color>
+    <color name="item_bg">#FFFFFF</color>
 </resources>

@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class MessageFragment extends Fragment {
 
     private final String[] mTitles = {
-            "已读", "未读"
+            "已读", "未读", "fresh","all"
     };
     private View mRootView;
     private ArrayList<Fragment> mFragments = new ArrayList<>();
@@ -37,6 +37,8 @@ public class MessageFragment extends Fragment {
 
         mFragments.add(new MsgReadedFragment());
         mFragments.add(new MsgUnReadFragment());
+        mFragments.add(new TempTest());
+        mFragments.add(new MsgAllFragment());
 
         SegmentTabLayout tabLayout_4 = ViewFindUtils.find(mRootView, R.id.tl_msg);
 

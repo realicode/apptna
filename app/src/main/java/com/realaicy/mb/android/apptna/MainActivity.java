@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity{
         outState = result.saveInstanceState(outState);
         //add the values which need to be saved from the accountHeader to the bundle
         outState = headerResult.saveInstanceState(outState);
-        super.onSaveInstanceState(outState);
+        //super.onSaveInstanceState(outState);
     }
 
     @Override
