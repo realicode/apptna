@@ -1,1 +1,1 @@
-include ':app', ':easyrecyclerview', ':brvah'
+include ':app', ':brvah', ':recyclerviewenhanced', ':swipemenu'
