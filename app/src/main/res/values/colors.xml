@@ -30,4 +30,11 @@
     <color name="txt_color">#1d1e1e</color>
     <color name="mian_bg">#FFFFFF</color>
     <color name="item_bg">#FFFFFF</color>
+
+    <color name="swipeoption_green">#36CF8E</color>
+    <color name="swipeoption_blue">#3693D0</color>
+    <color name="swipeoption_purple">#ff1744</color>
+
+    <color name="red">#ffff4444</color>
+    <color name="white">#ffffff</color>
 </resources>

@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class RealItemDragAdapter extends BaseItemDraggableAdapter<String, BaseViewHolder> {
     public RealItemDragAdapter(List data) {
-        super(R.layout.item_draggable_view, data);
+        super(R.layout.recycler_row, data);
     }
 
 
@@ -45,6 +45,6 @@ public class RealItemDragAdapter extends BaseItemDraggableAdapter<String, BaseVi
 
     @Override
     protected void convert(BaseViewHolder helper, String item) {
-        helper.setText(R.id.tv, item);
+        helper.setText(R.id.mainText, item);
     }
 }

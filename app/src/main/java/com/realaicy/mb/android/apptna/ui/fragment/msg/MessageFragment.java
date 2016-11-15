@@ -37,7 +37,7 @@ public class MessageFragment extends Fragment {
 
         mFragments.add(new MsgReadedFragment());
         mFragments.add(new MsgUnReadFragment());
-        mFragments.add(new TempTest());
+        mFragments.add(new MsgFreshFragment());
         mFragments.add(new MsgAllFragment());
 
         SegmentTabLayout tabLayout_4 = ViewFindUtils.find(mRootView, R.id.tl_msg);

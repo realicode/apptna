@@ -54,7 +54,7 @@ dependencies {
     compile 'com.google.dagger:dagger:2.7'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.7'
     compile 'com.luffykou:android-common-utils:1.1.3'
-    compile project(':easyrecyclerview')
+    compile project(':recyclerviewenhanced')
 
     compile 'com.jude:rollviewpager:1.2.9'
     compile 'jp.wasabeef:glide-transformations:1.3.1'
@@ -64,9 +64,10 @@ dependencies {
     compile 'com.yanzhenjie:recyclerview-swipe:1.0.2'
 
     compile 'com.github.anzaizai:EasyRefreshLayout:1.1.2'
-    compile project(':easyrecyclerview')
+
     compile project(':brvah')
 
 
 
+    compile project(path: ':swipemenu')
 }
